@@ -1,0 +1,60 @@
+:root{
+    --bgColor: #FFFFFF;
+    --accentColor: #6CA6CD;
+    --textColor: #2E2E2E;
+    --btnColot: #FFCC00;
+
+    --fontMain: Lato, 'Poppins';
+    --fontHeader: 'Poppins', Lato; 
+
+}
+
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+/* header styles*/
+.header{
+    font-family: var(--fontHeader);
+    background-color: var(--accentColor);
+    height: 400px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 85%);
+
+}
+
+.header h1{
+    color: white;
+    font-size: 4rem;
+    font-weight: bolder;
+
+}
+
+.header button{
+    padding: 1rem 2.5rem;
+    background-color: var(--btnColot);
+    border: 3px solid white;
+    border-radius: 8px;
+    color: white;
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.descriptionSection{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    justify-content: space-between;
+    justify-items: center;
+    align-items: center;
+}
+
+.descriptionSection .descriptionImage{
+    border-radius: 1px soid white;
+    border-radius: 8px;
+}
