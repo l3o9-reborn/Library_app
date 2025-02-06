@@ -15,46 +15,451 @@
     padding: 0;
 }
 
-/* header styles*/
-.header{
-    font-family: var(--fontHeader);
-    background-color: var(--accentColor);
-    height: 400px;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-
-    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 85%);
-
+body{
+    background-color: var(--bgColor);
 }
 
-.header h1{
-    color: white;
+/* header styles*/
+.header{
+    padding: 0rem 6rem;
+    font-family: var(--fontHeader);
+    background-color: var(--bgColor);
+    height: 200px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.logoSet{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo{
+    color: var(--accentColor);
     font-size: 4rem;
     font-weight: bolder;
 
 }
 
-.header button{
-    padding: 1rem 2.5rem;
+.logoBar{
+  background-color: var(--btnColot);
+  height: 10rem;
+  width: 2rem;
+  margin: 10px;
+  border-radius: 8px;
+}
+
+.logo .logoTop{
+  display: block;
+}
+
+.addBookBtn{
+    padding: 1rem 2rem;
     background-color: var(--btnColot);
-    border: 3px solid white;
+    border: 3px solid var(--bgColor);
     border-radius: 8px;
-    color: white;
+    color: var(--bgColor);
     font-size: 1.2rem;
     font-weight: 700;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+.addBookBtn:hover{
+  transform: scale(1.2);
 }
 
 .descriptionSection{
+    
+    text-align: center;
+    background-color: var(--accentColor);
+    padding-top: 6rem;
+    clip-path: polygon(0 0, 100% 5%, 100% 95%, 0 100%);
+}
+.descriptionSection h1{
+    color: var(--bgColor);
+    font-size: 2rem;
+    font-weight: 700;
+    text-align: center;
+    padding: rem;
+    margin-bottom: 5rem;
+}
+
+
+
+.descriptionMain{
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr;
-    justify-content: space-between;
+    text-align: start;
+    justify-content: flex-start;
     justify-items: center;
     align-items: center;
+    padding-bottom: 8rem;
 }
 
 .descriptionSection .descriptionImage{
-    border-radius: 1px soid white;
-    border-radius: 8px;
+  
+
 }
+.descriptionSection .descriptionImage img{
+    height: 25rem;
+    width: auto;
+    border-radius: 8px;
+
+}
+.description p{
+    color: var(--bgColor);
+    font-size: 1.5rem;
+    word-spacing: 0.6rem;
+    line-height: 1.5;
+    padding-right: 4rem;
+}
+/* 
+bestseller section */
+
+.showcaseBestSeller{
+  background-color: var(--bgColor);
+  padding: 4rem;
+}
+.showcaseBestSeller h1{
+  color: var(--accentColor);
+  font-size: 2rem;
+  font-weight: 700;
+  text-align: center;
+  padding: 2rem;
+}
+
+.bestSeller{
+  width: auto;
+  display: flex;
+  overflow-x: scroll;
+  white-space: nowrap; 
+}
+.bestSeller::-webkit-scrollbar {
+  display: none;
+}
+
+.bestSeller .book{
+  margin: 20px;
+  padding-bottom: 40px;
+  background-color: var(--bgColor);
+  border-radius: 8px;
+  box-shadow: 4px 4px 10px 5px var(--accentColor);
+  transition: transform 0.3s ease
+
+}
+.bestSeller .book:hover{
+  transform: translate(10px, -15px);
+}
+
+.bestSeller .book img{
+  height: 25rem ;
+  width: auto;
+  border-radius: 8px 8px 0px 0px ;
+  margin-bottom: 1rem;
+}
+
+.bestSeller .book h2, h3, p{
+  font-size: 1.5rem;
+  padding-left: 2rem;
+  color: var(--textColor);
+}
+
+.bestSeller .book p span{
+  padding: 2rem;
+}
+
+.addBook{
+  background-color: var(--accentColor);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 4rem;
+
+}
+.addBook h1{
+    color: var(--bgColor);
+    font-size: 2rem;
+    font-weight: 700;
+    text-align: center;
+    padding: 2rem;
+}
+.addBook p{
+    color: var(--bgColor);
+    font-size: 1.5rem;
+    word-spacing: 0.6rem;
+    line-height: 1.5;
+    margin-bottom: 40px;
+
+}
+
+/* Styling for the book container */
+.book {
+  position: relative;
+  border: 1px solid #ddd;
+  padding: 16px;
+  border-radius: 8px;
+  margin: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background-color: #fff;
+  transition: box-shadow 0.3s ease;
+
+}
+
+
+/* Delete button */
+
+.delete {
+
+  position: absolute;
+  background-color: transparent;
+  border: none;
+  top: 20px;
+  right: 20px;
+
+}
+.delete img {
+  max-width: 64px;
+  max-height: 64px;
+}
+
+.delete:hover {
+  background-color: transparent;
+  transform: scale(1.3);
+}
+
+/* Toggle button */
+.toggle {
+  margin-top: 10px;
+  padding: 1.1rem 7rem;
+  font-size: 14px;
+  font-weight: bold;
+  color: #fff;
+  background-color: var(--accentColor);
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.toggle:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+}
+
+.toggle.read {
+  background-color: #28a745;
+}
+
+.toggle.not-read {
+  background-color: #dc3545;
+}
+
+/* Styling for book images */
+.book img {
+  width: 150px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+
+
+
+
+
+/* footer */
+
+.footer{
+  background-color: var(--textColor);
+  text-align: center;
+
+}
+.footer .copyRight{
+  padding: 2rem;
+  font-size: 1.1rem;
+  color: var(--accentColor);
+
+}
+
+
+/* carousel */
+
+.carousel {
+  position: relative;
+  width: 80%;
+  max-width: 500px;
+  margin: auto;
+  overflow: hidden;
+  transition:  ease;
+  transform: scale(1.2);
+}
+
+.carousel-images {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+.carousel-item {
+  width: 100%;
+  height: auto;
+}
+
+.carousel button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  padding: 10px;
+}
+
+.prev {
+  left: 10px;
+}
+
+.next {
+  right: 10px;
+}
+
+button:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+  
+
+  
+  /* Add Book Card */
+  .add-book-card {
+
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    background-color: var(--bgColor);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    display: none;
+    z-index: 1000;
+  }
+  
+  .card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .card-header h2 {
+    color: var(--textColor);
+    margin: 0;
+    font-size: 20px;
+  }
+  
+  .close-btn {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: var(--accentColor);
+
+  }
+  
+  .close-btn:hover {
+    color: var(--btnColot);
+  }
+  
+  /* Form Styles */
+  .book-form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  label {
+    font-size: 14px;
+    color: var(--textColor);
+    margin-bottom: 5px;
+    display: block;
+  }
+  
+  input[type="text"],
+  input[type="number"],
+  input[type="file"] {
+    width: 95%;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid var(--accentColor);
+    border-radius: 5px;
+    outline: none;
+  }
+  
+  input[type="text"]:focus,
+  input[type="number"]:focus,
+  input[type="file"]:focus {
+    border-color:var(--btnColot);
+  }
+
+  /* Style for Radio Buttons */
+.form-group div {
+    margin-bottom: 10px;
+}
+
+input[type="radio"] {
+    margin-right: 10px;
+}
+
+label {
+    font-size: 14px;
+    color: #333;
+    cursor: pointer;
+}
+
+.radio{
+    display: flex;    
+}
+
+input[type="radio"]:focus {
+    outline: 2px solid #007BFF;
+}
+  
+  .submit-btn {
+    padding: 10px 20px;
+    background-color: var(--btnColot);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .submit-btn:hover {
+    color: var(--accentColor);
+  }
+  
+  /* Background Overlay */
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: none;
+    z-index: 999;
+  }
