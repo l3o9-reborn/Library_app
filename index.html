@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <script src="script.js" defer></script>
+    <script src="scriptClass.js" defer></script>
     <title>Document</title>
 </head>
 <body>
@@ -29,8 +29,8 @@
                       <img src="./images/b2.jpg" alt="Image 2" class="carousel-item">
                       <img src="./images/b3.jpg" alt="Image 3" class="carousel-item">
                     </div>
-                    <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
-                    <button class="next" onclick="moveSlide(1)">&#10095;</button>
+                    <button class="prev">&#10094;</button>
+                    <button class="next">&#10095;</button>
                   </div>
             </div>
             <div class="description">
@@ -139,11 +139,11 @@
         <div class="form-group">
             <label>Have you read this book?</label>
             <div class="radio">
-                <input type="radio" id="read" name="readStatus" value="Read" required />
+                <input type="radio" id="read" name="readStatus" value="READ" required />
                 <label for="read">Read</label>
             </div>
             <div class="radio">
-                <input type="radio" id="notRead" name="readStatus" value="Not Read" required />
+                <input type="radio" id="notRead" name="readStatus" value="NOT READ" required />
                 <label for="notRead">Not Read</label>
             </div>
         </div>
